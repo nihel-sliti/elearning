@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eLearning Navbar</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+<style>
+  /* Custom styles for the navbar */
+  .navbar-custom {
+      background: #00B4DB; /* This is a placeholder color. Replace with the exact color from your design */
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: white;
+    }
+    .navbar-custom .navbar-toggler {
+      color: white;
+      border-color: white;
+    }
+    .navbar-custom .nav-item.active .nav-link,
+    .navbar-custom .nav-link:hover {
+      color: #0056b3; /* This is a placeholder for the hover color */
+    }
+    .btn-join-now {
+      color: white; /* Adjust the text color as needed */
+      background-color: transparent;
+      border: 2px solid white; /* Adjust border color as needed */
+    }
+    .btn-join-now:hover {
+      background-color: white;
+      color: #00B4DB; /* Adjust text color on hover as needed */
+    }
+  /* Adjust the breakpoint for the navbar to collapse */
+  @media (max-width: 992px) {
+    .navbar-expand-custom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  .carousel-item {
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+
+
+  /*div section*/
+  .service-feature {
+      background: #f0f0f0; /* Adjust the background color as needed */
+      border: none;
+      border-radius: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .service-feature .bi {
+      font-size: 2rem; /* Adjust icon size as needed */
+      color: #007bff; /* Adjust the icon color as needed */
+    }
+    .service-feature h4 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      color: #333; /* Adjust title color as needed */
+    }
+    .service-feature p {
+      color: #666; /* Adjust text color as needed */
+    }
+    /* Additional responsive adjustments can be made here */
+    /* Custom styles for the About Us section */
+    .about-section {
+      display: flex;
+      align-items: center;
+      padding: 40px 0;
+    }
+    .about-text {
+      padding-left: 30px; /* Adjust as necessary */
+    }
+    .about-text h2 {
+      color: #007bff; /* Adjust the color to match your design */
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: #555; /* Adjust the color to match your design */
+      line-height: 1.6;
+    }
+    .about-list {
+      list-style: none;
+      padding: 0;
+    }
+    .about-list li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    .about-list li::before {
+      content: "→"; /* Custom arrow symbol, you can also use an image or icon */
+      color: #007bff; /* Arrow color */
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .feature-icon {
+      color: #007bff; /* Adjust the icon color as needed */
+      margin-right: 10px;
+    }
+    .btn-read-more {
+      background-color: #007bff; /* Adjust button color as needed */
+      color: white; /* Adjust text color as needed */
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px; /* Adjust as necessary */
+      border-radius: 5px; /* Adjust as necessary */
+      text-transform: uppercase;
+    }
+    .btn-read-more:hover {
+      background-color: #0056b3; /* Darker shade for hover effect */
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-text {
+        padding-left: 0;
+      }
+    }
+
+
+    
+    .category-title {
+      text-align: center;
+      color: #007bff; /* Adjust color to fit your design */
+    }
+    .category-section {
+      padding: 20px 0;
+    }
+    .category-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .category-card img {
+      width: 100%;
+      height: auto;
+     transition: transform 0.3s ease-in-out;
+    }
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+    .category-info {
+      position: absolute;
+      bottom: 10px;
+  
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px 15px;
+    }
+  
+
+    .category-title h2 {
+      display: inline-block;
+      font-size: 2.5rem; /* Adjust size as needed */
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .category-title h2::after {
+      content: '';
+      width: 100px; /* Line width */
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      border-bottom: 3px solid #00B4DB; /* Adjust the color to match your design */
+      transform: translateX(-50%);
+    }
+ 
+    .card {
+      margin-bottom: 30px;
+      border: none;
+      overflow: hidden;
+      border-radius: 0; /* Square edges, remove if you want rounded edges */
+    }
+    .card img {
+      height: auto; /* Fixed height for all images */
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover img {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+      color: #ffffff; /* Text color */
+      padding: 10px;
+    }
+    .card-title {
+      font-size: 1.25rem; /* Adjust size as needed */
+      margin: 0;
+    }
+    .card-text {
+      font-size: 0.875rem; /* Adjust size as needed */
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text,
+  .about-text h2,
+  .about-list li,
+  .service-feature .bi,
+  .card-title,
+  .card-text {
+    padding-left: 0;
+    font-size: smaller; /* Adjust the font size for smaller screens */
+  }
+  .btn-read-more {
+    width: 100%; /* Full width buttons on small screens */
+    margin-bottom: 10px; /* Add space below the button */
+  }
+  .category-card img {
+    transform: none; /* Disable zoom effect on small screens as it may not be as effective */
+  }
+  .card-body {
+    padding: 5px; /* Reduce padding to fit smaller screens */
+    text-align: center; /* Center text for readability */
+  }
+  .category-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px; /* Adjust padding */
+    font-size: 0.875rem; /* Adjust font size */
+  }
+}
+
+/* Larger devices may require different styling */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Adjust styles for tablets and small desktops */
+  .service-feature .bi {
+    font-size: 1.5rem; /* Slightly smaller icons for tablet */
+  }
+}
+
+
+
+
+
+    /* Add your CSS styling here */
+  .course-card {
+    /* Styling for the course cards */
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align:center;
+  }
+  .course-card .card {
+  /* Basic reset */
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* This ensures that anything that goes outside the bounds of the card, such as shadows, is hidden */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.course-card .card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifting' effect */
+}
+
+
+
+
+/* Additional styling can be done here */
+
+  .course-card img {
+    /* Styling for the image */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .course-card .card-title {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .course-card .btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+  .course-price {
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .course-rating {
+    color: #ffc107;
+  }
+  .course-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+  /* Additional CSS can be added here if needed */
+
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Adjust the image height as needed */
+.course-card img {
+  height: 250px;
+}
+
+/* Style adjustments for buttons */
+.course-card .btn-primary {
+  background-color: #007bff;
+  margin-right: 10
+}
+/* Add additional styles as needed */
+
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+
+.social-icon {
+  /* Add your styling for individual icons here */
+  margin: 0 5px;
+ 
+  /* Example: */
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+
+
+
+.section-title {
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: #333;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: teal; /* Or any color you prefer */
+  position: absolute;
+  top: 50%;
+}
+
+.section-title::before {
+  left: -120px; /* Adjust distance */
+}
+
+.section-title::after {
+  right: -120px; /* Adjust distance */
+}
+
+.testimonial {
+  background: #f0f0f0;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+}
+
+.testimonial-image {
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  border-radius: 50%;
+  
+
+}
+footer {
+  background-color: #343a40; /* Dark background for the footer */
+  color: #ffffff; /* White text color */
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+footer h5 {
+  color: #ffffff; /* White color for headings */
+  margin-bottom: 1.5rem;
+}
+
+footer ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0;
+}
+
+footer ul li a {
+  color: #cccccc; /* Light grey color for links */
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+footer ul li a:hover {
+  color: #aaaaaa; /* Slightly darker grey color on hover */
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: start; /* Align social icons to the start */
+}
+
+footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px; /* Space between icons */
+  color: #cccccc; /* Light grey color for icons */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+footer .social-icons a:hover {
+  color: #aaaaaa; /* Slightly darker grey color on hover */
+}
+
+footer p {
+  color: #cccccc; /* Light grey color for paragraph text */
+}
+
+footer .newsletter-form {
+  margin-top: 1rem;
+}
+
+footer .newsletter-form input[type="email"] {
+  background-color: #ffffff; /* White background for input */
+  border: 0; /* Removes default border */
+  padding: 0.5rem 1rem;
+}
+
+footer .newsletter-form button {
+  background-color: #007bff; /* Blue background for button */
+  color: #ffffff; /* White text color */
+  border: 0; /* Removes default border */
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+footer .newsletter-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer .footer-gallery img {
+  width: 100%; /* Makes gallery images responsive */
+  padding: 0.25rem; /* Adds spacing around images */
+  border-radius: 0.25rem; /* Rounds the corners of the images */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  footer .social-icons {
+    justify-content: center; /* Center icons on small screens */
+    margin-top: 1rem;
+  }
+
+  footer .newsletter-form {
+    text-align: center;
+  }
+
+  footer .newsletter-form input[type="email"],
+  footer .newsletter-form button {
+    width: 100%; /* Full width for input and button on small screens */
+    margin-bottom: 0.5rem; /* Adds space below the input and button */
+}
+
+footer .footer-gallery {
+margin-top: 1rem;
+}
+
+footer .footer-gallery img {
+margin-bottom: 0.5rem; /* Adds space below each image */
+}
+}
+
+
+</style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">eLEARNING</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">COURSES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                PAGES
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Dropdown link 1</a>
+                <a class="dropdown-item" href="#">Dropdown link 2</a>
+                <!-- Add other dropdown links here -->
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-join-now" href="#">Join Now</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="heroCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+      
+          <div class="carousel-item active" style="background-image: url('carousel-2.jpg')">
+            <div class="overlay-text text-center">
+              <h5>Best Online Courses</h5>
+              <p>Get Educated Online From Your Home</p>
+              <button class="btn btn-primary">Join Now</button>
+            </div>
+          </div>
+      
+          <div class="carousel-item" style="background-image: url('carousel-1.jpg')">
+            <div class="overlay-text text-center">
+              <h5>Best Online Courses</h5>
+              <p>Get Educated Online From Your Home</p>
+            </div>
+          </div>
+      
+          <!-- Add more carousel items here -->
+      
+        </div>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+<div class="container my-5">
+    <div class="row">
+      <!-- Skilled Instructors -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card service-feature">
+          <i class="bi bi-mortarboard-fill"></i>
+          <h4>Skilled Instructors</h4>
+          <p>Diem elit kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+        </div>
+      </div>
+      <!-- Online Classes -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card service-feature">
+          <i class="bi bi-globe2"></i>
+          <h4>Online Classes</h4>
+          <p>Diem elit kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+        </div>
+      </div>
+      <!-- Home Projects -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card service-feature">
+          <i class="bi bi-house-door-fill"></i>
+          <h4>Home Projects</h4>
+          <p>Diem elit kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+        </div>
+      </div>
+      <!-- Book Library -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card service-feature">
+          <i class="bi bi-book-fill"></i>
+          <h4>Book Library</h4>
+          <p>Diem elit kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row about-section">
+      <div class="col-md-6">
+        <img src="about.jpg" alt="About Us" class="img-fluid">
+      </div>
+      <div class="col-md-6 about-text">
+        <h2>Welcome to eLEARNING</h2>
+        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+        <ul class="about-list">
+          <li><i class="fas fa-check feature-icon"></i>Skilled Instructors</li>
+          <li><i class="fas fa-check feature-icon"></i>International Certificate</li>
+          <li><i class="fas fa-check feature-icon"></i>Online Classes</li>
+        </ul>
+        <a href="#" class="btn btn-read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="category-title">
+        <h2>Courses Categories</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row category-section">
+      <!-- Each category should be repeated with appropriate image and info -->
+      <div class="col-md-8">
+        <div class="grid-section category-card">
+          <img src="cat-1.jpg" alt="Web Design" class="img-fluid">
+          <div class="category-info">
+            <h5>Web Design</h5>
+            <p>49 Courses</p>
+          </div>
+        </div>
+      </div>
+       <!-- Category 2 -->
+    <div class="col-md-4">
+        <div class="card grid-section mb-2">
+          <img src="cat-2.jpg" class="img-fluid" alt="Graphic Design">
+          <div class="category-info">
+            <h5 class="card-title">Graphic Design</h5>
+            <p class="card-text">49 Courses</p>
+          </div>
+        </div>
+      </div>
+      <!-- Category 3 -->
+      <div class="col-md-4">
+        <div class="card grid-section mb-2">
+          <img src="cat-3.jpg" class="img-fluid" alt="Video Editing">
+          <div class="category-info">
+            <h5 class="card-title">Video Editing</h5>
+            <p class="card-text">49 Courses</p>
+          </div>
+        </div>
+      </div>
+
+<!-- Category 4 -->
+<div class="col-md-4">
+    <div class="card grid-section">
+      <img src="cat-4.jpg" class="img-fluid" alt="Online Marketing">
+      <div class="category-info">
+        <h5 class="card-title">Online Marketing</h5>
+        <p class="card-text">49 Courses</p>
+      </div>
+    </div>
+  </div>
+  
+  
+    </div>
+  </div>
+  
+  <div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4">
+          <div class="course-card"> 
+          <div class="position-relative">
+                <img src="carousel-1.jpg" class="card-img-top" alt="Course Image">
+            <div class="card-img-overlay d-flex justify-content-center align-items-end pb-3">
+              <a href="#" class="btn btn-primary mr-2">Read More</a>
+              <a href="#" class="btn btn-secondary">Join Now</a>
+            </div>
+          
+        <div class="card-body">
+          <div class="course-price">$149.00</div>
+          <div class="course-rating">★★★★★ (123)</div>
+          <h5 class="card-title">Web Design & Development Course for Beginners</h5>
+          <div class="course-info">
+            <span>John Doe</span>
+            <span>1.49 Hrs</span>
+            <span>30 Students</span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+    <div class="course-card"> 
+        <div class="position-relative">
+              <img src="carousel-1.jpg" class="card-img-top" alt="Course Image">
+          <div class="card-img-overlay d-flex justify-content-center align-items-end pb-3">
+            <a href="#" class="btn btn-primary mr-2">Read More</a>
+            <a href="#" class="btn btn-secondary">Join Now</a>
+          </div>
+        
+      <div class="card-body">
+        <div class="course-price">$149.00</div>
+        <div class="course-rating">★★★★★ (123)</div>
+        <h5 class="card-title">Web Design & Development Course for Beginners</h5>
+        <div class="course-info">
+          <span>John Doe</span>
+          <span>1.49 Hrs</span>
+          <span>30 Students</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+  <div class="course-card"> 
+    <div class="position-relative">
+          <img src="carousel-1.jpg" class="card-img-top" alt="Course Image">
+      <div class="card-img-overlay d-flex justify-content-center align-items-end pb-3">
+        <a href="#" class="btn btn-primary mr-2">Read More</a>
+        <a href="#" class="btn btn-secondary">Join Now</a>
+      </div>
+    
+  <div class="card-body">
+    <div class="course-price">$149.00</div>
+    <div class="course-rating">★★★★★ (123)</div>
+    <h5 class="card-title">Web Design & Development Course for Beginners</h5>
+    <div class="course-info">
+      <span>John Doe</span>
+      <span>1.49 Hrs</span>
+      <span>30 Students</span>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2>Expert Instructors</h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Instructor 1 -->
+      <div class="col-md-3 col-sm-6 my-3">
+        <div class="card">
+          <img src="team-1.jpg" class="card-img-top" alt="Instructor 1">
+          <div class="card-body">
+            <h5 class="card-title">Instructor Name</h5>
+            <p class="card-text">Designation</p>
+            <div class="social-icons">
+                <!-- Social icons can be added here -->
+                <a href="#" class="social-icon">
+                <i class=" bi bi-facebook"></i></a>
+                <a href="#" class="social-icon">  <i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-icon">   <i class="bi bi-instagram"></i></a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for other instructors -->
+          <!-- Instructor 1 -->
+          <div class="col-md-3 col-sm-6 my-3">
+            <div class="card">
+              <img src="team-2.jpg" class="card-img-top" alt="Instructor 1">
+              <div class="card-body">
+                <h5 class="card-title">Instructor Name</h5>
+                <p class="card-text">Designation</p>
+                <div class="social-icons">
+                    <!-- Social icons can be added here -->
+                    <a href="#" class="social-icon">
+                    <i class=" bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon">  <i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-icon">   <i class="bi bi-instagram"></i></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+                <!-- Repeat for other instructors -->
+          <!-- Instructor 1 -->
+          <div class="col-md-3 col-sm-6 my-3">
+            <div class="card">
+              <img src="team-3.jpg" class="card-img-top" alt="Instructor 1">
+              <div class="card-body">
+                <h5 class="card-title">Instructor Name</h5>
+                <p class="card-text">Designation</p>
+                <div class="social-icons">
+                    <!-- Social icons can be added here -->
+                    <a href="#" class="social-icon">
+                    <i class=" bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon">  <i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-icon">   <i class="bi bi-instagram"></i></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+                   <!-- Repeat for other instructors -->
+          <!-- Instructor 1 -->
+          <div class="col-md-3 col-sm-6 my-3">
+            <div class="card">
+              <img src="team-4.jpg" class="card-img-top" alt="Instructor 1">
+              <div class="card-body">
+                <h5 class="card-title">Instructor Name</h5>
+                <p class="card-text">Designation</p>
+                <div class="social-icons">
+                  <!-- Social icons can be added here -->
+                  <a href="#" class="social-icon">
+                  <i class=" bi bi-facebook"></i></a>
+                  <a href="#" class="social-icon">  <i class="bi bi-twitter"></i></a>
+                  <a href="#" class="social-icon">   <i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  
+  
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Our Students Say!</h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="testimonial-1.jpg" alt="Client Name" class="testimonial-image">
+          <h5 class="client-name">Client Name</h5>
+          <p class="client-profession">Profession</p>
+          <p class="testimonial-text">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="testimonial-2.jpg" alt="Client Name" class="testimonial-image">
+          <h5 class="client-name">Client Name</h5>
+          <p class="client-profession">Profession</p>
+          <p class="testimonial-text">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="testimonial">
+          <img src="testimonial-3.jpg" alt="Client Name" class="testimonial-image">
+          <h5 class="client-name">Client Name</h5>
+          <p class="client-profession">Profession</p>
+          <p class="testimonial-text">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Quick Link</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light">About Us</a></li>
+          <li><a href="#" class="text-light">Contact Us</a></li>
+          <li><a href="#" class="text-light">Privacy Policy</a></li>
+          <li><a href="#" class="text-light">Terms & Condition</a></li>
+          <li><a href="#" class="text-light">FAQs & Help</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contact</h5>
+        <p><i class="bi bi-geo-alt-fill"></i> 123 Street, New York, USA</p>
+        <p><i class="bi bi-telephone-fill"></i> +012 345 67890</p>
+        <p><i class="bi bi-envelope-fill"></i> info@example.com</p>
+        <div class="social-icons">
+          <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h5>Gallery</h5>
+        <!-- Gallery images -->
+        <div class="row">
+          <div class="col-4"><img src="gallery1.jpg" class="img-fluid mb-2" alt="Gallery Image"></div>
+          <!-- More images -->
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h5>Newsletter</h5>
+        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+        <form>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your email" aria-label="Recipient's email">
+            <button class="btn btn-primary" type="submit">SignUp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
