@@ -15,6 +15,7 @@
   .navbar-custom {
       background: #00B4DB; /* This is a placeholder color. Replace with the exact color from your design */
     }
+ 
     .navbar-custom .navbar-brand,
     .navbar-custom .navbar-nav .nav-link {
       color: white;
@@ -36,6 +37,41 @@
       background-color: white;
       color: #00B4DB; /* Adjust text color on hover as needed */
     }
+    .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/svg/solid/bars.svg'); /* Path to your custom icon */
+  }
+
+  /* If you want to create a custom icon using CSS */
+  .custom-toggler-icon {
+    width: 30px; /* Width of the custom icon */
+    height: 2px; /* Height of the custom icon */
+    background-color: #fff; /* Color of the custom icon */
+    position: relative;
+    border-radius: 1px;
+    display: inline-block;
+  }
+  
+  .custom-toggler-icon:after,
+  .custom-toggler-icon:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Height of the custom icon */
+    background-color: #fff; /* Color of the custom icon */
+    border-radius: 1px;
+  }
+  
+  .custom-toggler-icon:before {
+    top: -8px;
+  }
+  
+  .custom-toggler-icon:after {
+    bottom: -8px;
+  }
   /* Adjust the breakpoint for the navbar to collapse */
   @media (max-width: 992px) {
     .navbar-expand-custom {
@@ -46,7 +82,7 @@
   }
 
   .carousel-item {
-    height: 65vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
   }
@@ -56,7 +92,56 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+    
   }
+  
+  .custom-btn {
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for larger click area */
+  }
+  .carousel-item  h5 {
+    font-size: 1,5rem; /* Large font size */
+   /* Bold font weight */
+    margin-bottom: 5px;
+    color: #00B4DB;  /* Spacing between h1 and paragraph */
+    text-align: left;
+  }
+  
+  .carousel-item  p {
+    font-size: 3rem; /* Larger than default paragraph size */
+    margin-bottom: 30px; 
+    font-size: 3rem; /* Large font size */
+    font-weight: bold;/* Spacing below the paragraph */
+    text-align: left;
+  }
+
+  .btn-outline-custom {
+    background-color:  #00B4DB;
+    border: 2px solid #ffffff; /* White border */
+    color:  white; /* White text */
+  }
+  .btn-outline-custom2 {
+    background-color:  transparent;
+    border: 2px solid #ffffff; /* White border */
+    color:  white; /* White text */
+  }
+  .btn-outline-custom:hover {
+    background-color: transparent; /* White background on hover */
+    color: #00B4DB; /* Blue text on hover */
+  }
+  .btn-outline-custom2:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #00B4DB; /* Blue text on hover */
+  }
+  /* Additional styles for the button container if necessary */
+  .button-container {
+    display: flex; /* Align buttons in a row */
+    gap: 10px; /* Spacing between buttons */
+  }
+
+
+
+
 
 
   /*div section*/
@@ -66,18 +151,29 @@
       border-radius: 0;
       padding: 20px;
       text-align: center;
+    
     }
+  =
     .service-feature .bi {
       font-size: 2rem; /* Adjust icon size as needed */
       color: #007bff; /* Adjust the icon color as needed */
+    }
+    .service-feature:hover .bi{
+      font-size: 2rem; /* Adjust icon size as needed */
+      color: white; /* Adjust the icon color as needed */
     }
     .service-feature h4 {
       margin-top: 15px;
       margin-bottom: 15px;
       color: #333; /* Adjust title color as needed */
     }
-    .service-feature p {
-      color: #666; /* Adjust text color as needed */
+    .service-feature:hover h4 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      color: white; /* Adjust title color as needed */
+    }
+    .service-feature:hover p {
+      color: white; /* Adjust text color as needed */
     }
     /* Additional responsive adjustments can be made here */
     /* Custom styles for the About Us section */
@@ -190,8 +286,15 @@
       margin-bottom: 30px;
       border: none;
       overflow: hidden;
-      border-radius: 0; /* Square edges, remove if you want rounded edges */
+      border-radius: 0; 
+      transition: transform 0.3s ease-in-out;
+      /* Square edges, remove if you want rounded edges */
     }
+    .card:hover {
+  transform: scale(1.05); 
+  background-color: #00B4DB; /* White background on hover */
+/* Scales up the card slightly on hover */
+}
     .card img {
       height: auto; /* Fixed height for all images */
       width: 100%;
@@ -217,6 +320,8 @@
     .card-text {
       font-size: 0.875rem; /* Adjust size as needed */
     }
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -516,11 +621,13 @@ margin-bottom: 0.5rem; /* Adds space below each image */
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="#">eLEARNING</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#">
+      <img src="icons8-courses-64.png" alt="eLEARNING Logo" style="height: 40px;">
+      eLEARNING </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="custom-toggler-icon"></span>
+    </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -558,7 +665,17 @@ margin-bottom: 0.5rem; /* Adds space below each image */
             <div class="overlay-text text-center">
               <h5>Best Online Courses</h5>
               <p>Get Educated Online From Your Home</p>
-              <button class="btn btn-primary">Join Now</button>
+             <div class="container">
+              <div class="row">
+                <div class="col-md-12 button-container">
+                  <!-- Use Bootstrap's btn and btn-primary for the "Read More" button -->
+                  <button class="btn   btn-outline-custom  custom-btn">Read More</button>
+                  
+                  <!-- Use custom class btn-outline-custom for the "Join Now" button -->
+                  <button class="btn btn-outline-custom2 custom-btn">Join Now</button>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
       
@@ -566,6 +683,17 @@ margin-bottom: 0.5rem; /* Adds space below each image */
             <div class="overlay-text text-center">
               <h5>Best Online Courses</h5>
               <p>Get Educated Online From Your Home</p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 button-container">
+                    <!-- Use Bootstrap's btn and btn-primary for the "Read More" button -->
+                    <button class="btn   btn-outline-custom  custom-btn">Read More</button>
+                    
+                    <!-- Use custom class btn-outline-custom for the "Join Now" button -->
+                    <button class="btn btn-outline-custom2 custom-btn">Join Now</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
       
@@ -581,6 +709,8 @@ margin-bottom: 0.5rem; /* Adds space below each image */
           <span class="sr-only">Next</span>
         </a>
       </div>
+
+
 
 <div class="container my-5">
     <div class="row">
@@ -657,7 +787,7 @@ margin-bottom: 0.5rem; /* Adds space below each image */
        <!-- Category 2 -->
     <div class="col-md-4">
         <div class="card grid-section mb-2">
-          <img src="cat-2.jpg" class="img-fluid" alt="Graphic Design">
+          <img src="cat-4.jpg" class="img-fluid" alt="Graphic Design">
           <div class="category-info">
             <h5 class="card-title">Graphic Design</h5>
             <p class="card-text">49 Courses</p>
@@ -678,7 +808,7 @@ margin-bottom: 0.5rem; /* Adds space below each image */
 <!-- Category 4 -->
 <div class="col-md-4">
     <div class="card grid-section">
-      <img src="cat-4.jpg" class="img-fluid" alt="Online Marketing">
+      <img src="cat-2.jpg" class="img-fluid" alt="Online Marketing">
       <div class="category-info">
         <h5 class="card-title">Online Marketing</h5>
         <p class="card-text">49 Courses</p>
