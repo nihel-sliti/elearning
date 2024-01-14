@@ -1,0 +1,709 @@
+ /* Custom styles for the navbar */
+  .navbar-custom {
+      background: #00B4DB; /* This is a placeholder color. Replace with the exact color from your design */
+    }
+ .navbar-nav{
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+    color: var(--dark);
+    font-weight: 500;
+  
+ }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: white;
+    }
+    .navbar-custom .navbar-toggler {
+      color: white;
+      border-color: white;
+    }
+    .navbar-custom .nav-item.active .nav-link,
+    .navbar-custom .nav-link:hover {
+      color: #0056b3; /* This is a placeholder for the hover color */
+    }
+    .btn-join-now {
+      color: white; /* Adjust the text color as needed */
+      background-color: transparent;
+      border: 2px solid white; /* Adjust border color as needed */
+    }
+    .btn-join-now:hover {
+      background-color: white;
+      color: #00B4DB; /* Adjust text color on hover as needed */
+    }
+    .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/svg/solid/bars.svg'); /* Path to your custom icon */
+  }
+  .custom-toggler-icon {
+    width: 30px; /* Width of the custom icon */
+    height: 2px; /* Height of the custom icon */
+    background-color: #fff; /* Color of the custom icon */
+    position: relative;
+    border-radius: 1px;
+    display: inline-block;
+  }
+  
+  .custom-toggler-icon:after,
+  .custom-toggler-icon:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Height of the custom icon */
+    background-color: #fff; /* Color of the custom icon */
+    border-radius: 1px;
+  }
+  
+  .custom-toggler-icon:before {
+    top: -8px;
+  }
+  
+  .custom-toggler-icon:after {
+    bottom: -8px;
+  }
+  
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+  /* Adjust the breakpoint for the navbar to collapse */
+  @media (max-width: 992px) {
+    .navbar-expand-custom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+ /* Custom styles for the section1 */
+  .carousel-item {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    
+  }
+  
+  .custom-btn {
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for larger click area */
+  }
+  .carousel-item  h5 {
+    font-size: 1,5rem; /* Large font size */
+   /* Bold font weight */
+    margin-bottom: 5px;
+    color: #00B4DB;  /* Spacing between h1 and paragraph */
+    text-align: left;
+  }
+  
+  .carousel-item  p {
+    font-size: 3rem; /* Larger than default paragraph size */
+    margin-bottom: 30px; 
+    font-size: 3rem; /* Large font size */
+    font-weight: bold;/* Spacing below the paragraph */
+    text-align: left;
+  }
+
+  .btn-outline-custom {
+    background-color:  #00B4DB;
+    border: 2px solid #ffffff; /* White border */
+    color:  white; /* White text */
+  }
+  .btn-outline-custom2 {
+    background-color:  transparent;
+    border: 2px solid #ffffff; /* White border */
+    color:  white; /* White text */
+  }
+  .btn-outline-custom:hover {
+    background-color: transparent; /* White background on hover */
+    color: #00B4DB; /* Blue text on hover */
+  }
+  .btn-outline-custom2:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #00B4DB; /* Blue text on hover */
+  }
+  /* Additional styles for the button container if necessary */
+  .button-container {
+    display: flex; /* Align buttons in a row */
+    gap: 10px; /* Spacing between buttons */
+  }
+
+
+
+
+
+
+  /*div section2*/
+  
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration-color:  #00B4DB;
+
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background:  #00B4DB;
+    z-index: -1;
+    text-decoration-color:  #00B4DB;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: #00B4DB ;
+    z-index: -1;
+    text-decoration-color:  #00B4DB;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+    text-decoration-color:  #00B4DB;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+    text-decoration-color:  #00B4DB;
+}
+  .service-feature {
+      background: #f0f0f0; /* Adjust the background color as needed */
+      border: none;
+      border-radius: 0;
+      padding: 20px;
+      text-align: center;
+    
+    }
+  
+    .service-feature .bi {
+      font-size: 2rem; /* Adjust icon size as needed */
+      color: #007bff; /* Adjust the icon color as needed */
+    }
+    .service-feature:hover .bi{
+      font-size: 2rem; /* Adjust icon size as needed */
+      color: white; /* Adjust the icon color as needed */
+    }
+    .service-feature h4 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      color: #333; /* Adjust title color as needed */
+    }
+    .service-feature:hover h4 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      color: white; /* Adjust title color as needed */
+    }
+    .service-feature:hover p {
+      color: white; /* Adjust text color as needed */
+    }
+   
+    .about-section {
+      display: flex;
+      align-items: center;
+      padding: 40px 0;
+    }
+    .about-text {
+      padding-left: 30px; /* Adjust as necessary */
+    }
+    .about-text h2 {
+      color: #00B4DB; /* Adjust the color to match your design */
+      margin-bottom: 20px;
+    }
+    .about-text h6 {
+        color: #00B4DB;; /* Adjust the color to match your design */
+        margin-bottom: 20px;
+      }
+    .about-text p {
+      color: #555; /* Adjust the color to match your design */
+      line-height: 1.6;
+    }
+    .about-list {
+      list-style: none;
+      padding: 0;
+    }
+    .about-list li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    .about-list li::before {
+      content: "→"; /* Custom arrow symbol, you can also use an image or icon */
+      color: #00B4DB; /* Arrow color */
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: large;
+    }
+    .feature-icon {
+      color: #007bff; /* Adjust the icon color as needed */
+      margin-right: 10px;
+    }
+    .btn-read-more {
+      background-color: #00B4DB; /* Adjust button color as needed */
+      color: white; /* Adjust text color as needed */
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px; /* Adjust as necessary */
+      border-radius: 5px; /* Adjust as necessary */
+      text-transform: uppercase;
+    }
+    .btn-read-more:hover {
+      background-color: white; /* Darker shade for hover effect */
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-text {
+        padding-left: 0;
+      }
+    }
+
+ /* Custom styles for the category */
+    
+    .category-title {
+      text-align: center;
+      color: #00B4DB; /* Adjust color to fit your design */
+    }
+    .category-section {
+      padding: 20px 0;
+    }
+    .category-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .category-card img {
+      width: 100%;
+      height: auto;
+     transition: transform 0.3s ease-in-out;
+    }
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+    .category-info {
+      position: absolute;
+      bottom: 10px;
+  
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px 15px;
+    }
+  
+
+    .category-title h2 {
+      display: inline-block;
+      font-size: 2.5rem; /* Adjust size as needed */
+      font-weight: bold;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .category-title h2::after {
+      content: '';
+      width: 100px; /* Line width */
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      border-bottom: 3px solid #00B4DB; /* Adjust the color to match your design */
+      transform: translateX(-50%);
+    }
+ 
+    .card {
+      margin-bottom: 30px;
+      border: none;
+      overflow: hidden;
+      border-radius: 0; 
+      transition: transform 0.3s ease-in-out;
+      /* Square edges, remove if you want rounded edges */
+    }
+    .card:hover {
+  transform: scale(1.05); 
+  background-color: #00B4DB; /* White background on hover */
+/* Scales up the card slightly on hover */
+}
+    .card img {
+      height: auto; /* Fixed height for all images */
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover img {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+      color: #ffffff; /* Text color */
+      padding: 10px;
+    }
+    .card-title {
+      font-size: 1.25rem; /* Adjust size as needed */
+      margin: 0;
+    }
+    .card-text {
+      font-size: 0.875rem; /* Adjust size as needed */
+    }
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text,
+  .about-text h2,
+  .about-list li,
+  .service-feature .bi,
+  .card-title,
+  .card-text {
+    padding-left: 0;
+    font-size: smaller; /* Adjust the font size for smaller screens */
+  }
+  .btn-read-more {
+    width: 100%; /* Full width buttons on small screens */
+    margin-bottom: 10px; /* Add space below the button */
+  }
+  .category-card img {
+    transform: none; /* Disable zoom effect on small screens as it may not be as effective */
+  }
+  .card-body {
+    padding: 5px; /* Reduce padding to fit smaller screens */
+    text-align: center; /* Center text for readability */
+  }
+  .category-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px; /* Adjust padding */
+    font-size: 0.875rem; /* Adjust font size */
+  }
+}
+
+/* Larger devices may require different styling */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Adjust styles for tablets and small desktops */
+  .service-feature .bi {
+    font-size: 1.5rem; /* Slightly smaller icons for tablet */
+  }
+}
+
+
+
+
+
+    /* Course style*/
+  .course-card {
+    /* Styling for the course cards */
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align:center;
+  }
+  .course-card .card {
+  /* Basic reset */
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* This ensures that anything that goes outside the bounds of the card, such as shadows, is hidden */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.course-card .card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifting' effect */
+}
+
+
+
+ /* Custom styles for the instructor */
+
+
+  .course-card img {
+   
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .course-card .card-title {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .course-card .btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+  .course-price {
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .course-rating {
+    color: #ffc107;
+  }
+  .course-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+
+
+.course-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Adjust the image height as needed */
+.course-card img {
+  height: 250px;
+}
+
+/* Style adjustments for buttons */
+.course-card .btn-primary {
+  background-color: #007bff;
+  margin-right: 10
+}
+.social-icons {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+
+.social-icon {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+
+
+ /* Custom styles for the review */
+.section-title {
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: #333;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: teal; /* Or any color you prefer */
+  position: absolute;
+  top: 50%;
+}
+
+.section-title::before {
+  left: -120px; /* Adjust distance */
+}
+
+.section-title::after {
+  right: -120px; /* Adjust distance */
+}
+
+.testimonial {
+  background: #f0f0f0;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+}
+
+.testimonial-image {
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  border-radius: 50%;
+  
+}
+ /* Custom styles for the footer */
+footer {
+  background-color: #343a40; /* Dark background for the footer */
+  color: #ffffff; /* White text color */
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+footer h5 {
+  color: #ffffff; /* White color for headings */
+  margin-bottom: 1.5rem;
+}
+
+footer ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0;
+}
+
+footer ul li a {
+  color: #cccccc; /* Light grey color for links */
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+footer ul li a:hover {
+  color: #aaaaaa; /* Slightly darker grey color on hover */
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: start; /* Align social icons to the start */
+}
+
+footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px; /* Space between icons */
+  color: #cccccc; /* Light grey color for icons */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+
+}
+.lien a{
+     color: white;
+}
+footer .social-icons a:hover {
+  color: #aaaaaa; /* Slightly darker grey color on hover */
+}
+
+footer p {
+  color: #cccccc; /* Light grey color for paragraph text */
+}
+
+footer .newsletter-form {
+  margin-top: 1rem;
+}
+
+footer .newsletter-form input[type="email"] {
+  background-color: #ffffff; /* White background for input */
+  border: 0; /* Removes default border */
+  padding: 0.5rem 1rem;
+}
+
+footer .newsletter-form button {
+  background-color: #007bff; /* Blue background for button */
+  color: #ffffff; /* White text color */
+  border: 0; /* Removes default border */
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+footer .newsletter-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer .footer-gallery img {
+  width: 100%; /* Makes gallery images responsive */
+  padding: 0.25rem; /* Adds spacing around images */
+  border-radius: 0.25rem; /* Rounds the corners of the images */
+}
+.footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    color: white;
+}
+
+.footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    color: white;
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  footer .social-icons {
+    justify-content: center; /* Center icons on small screens */
+    margin-top: 1rem;
+  }
+
+  footer .newsletter-form {
+    text-align: center;
+  }
+
+  footer .newsletter-form input[type="email"],
+  footer .newsletter-form button {
+    width: 100%; /* Full width for input and button on small screens */
+    margin-bottom: 0.5rem; /* Adds space below the input and button */
+}
+
+footer .footer-gallery {
+margin-top: 1rem;
+}
+
+footer .footer-gallery img {
+margin-bottom: 0.5rem; /* Adds space below each image */
+}
+}
